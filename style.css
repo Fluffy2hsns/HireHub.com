@@ -1612,3 +1612,144 @@ main {
     font-size: 14px;
   }
 }
+
+
+
+
+
+/* Добавьте в style.css */
+
+/* Стили для полного резюме */
+.full-resume {
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.resume-content {
+  margin: 20px 0;
+}
+
+.resume-section {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+}
+
+.resume-section h5 {
+  margin-bottom: 15px;
+  color: #2c5aa0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.resume-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.resume-field strong {
+  color: #555;
+  font-weight: 600;
+  min-width: 160px;
+}
+
+.resume-field span {
+  color: #333;
+  text-align: right;
+  flex: 1;
+}
+
+.resume-text {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #2c5aa0;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #eaeaea;
+}
+
+.download-resume-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-resume-btn:hover {
+  background: #218838;
+}
+
+.close-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-btn:hover {
+  background: #5a6268;
+}
+
+/* Адаптивность для резюме */
+@media (max-width: 768px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resume-field {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .resume-field strong {
+    min-width: auto;
+  }
+  
+  .resume-field span {
+    text-align: left;
+  }
+  
+  .resume-actions {
+    flex-direction: column;
+  }
+  
+  .download-resume-btn,
+  .close-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
