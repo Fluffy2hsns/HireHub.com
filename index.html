@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>HireHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="search-container">
+      <input type="text" class="search-bar" id="search-input" placeholder="Поиск вакансий...">
+      <button class="filter-btn" id="filter-btn">🔍 Фильтры</button>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="filters-summary" id="filters-summary" style="display:none;">
+      <!-- Активные фильтры будут отображаться здесь -->
+    </div>
+    <h2>Вакансии</h2>
+    <div id="jobs-list"></div>
+  </main>
+
+  <!-- Модальное окно фильтров -->
+  <div id="filters-modal" class="modal">
+    <div class="modal-content filters-modal">
+      <span class="close-button">&times;</span>
+      <h3>Фильтры вакансий</h3>
+      
+      <div class="filter-section">
+        <h4>💼 Специальность</h4>
+        <input type="text" id="filter-profession" placeholder="Например: программист, дизайнер...">
+      </div>
+
+      <div class="filter-section">
+        <h4>💰 Зарплата</h4>
+        <div class="salary-range">
+          <input type="number" id="filter-salary-min" placeholder="От" min="0">
+          <span>—</span>
+          <input type="number" id="filter-salary-max" placeholder="До" min="0">
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>🏙️ Город</h4>
+        <input type="text" id="filter-city" placeholder="Например: Москва, Санкт-Петербург...">
+      </div>
+
+      <div class="filter-section">
+        <h4>⏱️ Тип занятости</h4>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="employmentType" value="full"> Полная занятость</label>
+          <label><input type="checkbox" name="employmentType" value="part"> Частичная занятость</label>
+          <label><input type="checkbox" name="employmentType" value="project"> Проектная работа</label>
+          <label><input type="checkbox" name="employmentType" value="internship"> Стажировка</label>
+          <label><input type="checkbox" name="employmentType" value="remote"> Удаленная работа</label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h4>🎯 Опыт работы</h4>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="experience" value="no"> Без опыта</label>
+          <label><input type="checkbox" name="experience" value="1-3"> 1-3 года</label>
+          <label><input type="checkbox" name="experience" value="3-6"> 3-6 лет</label>
+          <label><input type="checkbox" name="experience" value="6+"> Более 6 лет</label>
+        </div>
+      </div>
+
+      <div class="filter-actions">
+        <button id="apply-filters" class="apply-btn">✅ Применить фильтры</button>
+        <button id="reset-filters" class="reset-btn">🔄 Сбросить все</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

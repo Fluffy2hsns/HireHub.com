@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Создать резюме - HireHub</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <!-- Замените старую ссылку чатов на эту -->
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="auth-container">
+      <h1 id="resume-title">Создать резюме</h1>
+      <form id="resume-form">
+        <div class="form-section">
+          <h3>Личная информация</h3>
+          <label>Имя * <input type="text" id="name" required></label>
+          <label>Фамилия * <input type="text" id="surname" required></label>
+          <label>Отчество <input type="text" id="patronymic"></label>
+          <label>Дата рождения <input type="date" id="birth-date"></label>
+          <label>Телефон * <input type="tel" id="phone" required></label>
+          <label>Email * <input type="email" id="email" required></label>
+        </div>
+
+        <div class="form-section">
+          <h3>Профессиональная информация</h3>
+          <label>Специальность * <input type="text" id="profession" placeholder="Например: Frontend разработчик" required></label>
+          <label>Желаемая зарплата <input type="text" id="salary" placeholder="Например: 80 000 руб."></label>
+          <label>Тип занятости
+            <select id="employment-type">
+              <option value="">Выберите тип</option>
+              <option value="full">Полная занятость</option>
+              <option value="part">Частичная занятость</option>
+              <option value="project">Проектная работа</option>
+              <option value="internship">Стажировка</option>
+              <option value="remote">Удаленная работа</option>
+            </select>
+          </label>
+          <label>График работы
+            <select id="work-schedule">
+              <option value="">Выберите график</option>
+              <option value="full">Полный день</option>
+              <option value="shift">Сменный график</option>
+              <option value="flexible">Гибкий график</option>
+              <option value="remote">Удаленная работа</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <h3>Опыт и навыки</h3>
+          <label>Опыт работы
+            <textarea id="experience" placeholder="Опишите ваш опыт работы..."></textarea>
+          </label>
+          <label>Ключевые навыки
+            <textarea id="skills" placeholder="Перечислите ваши навыки..."></textarea>
+          </label>
+          <label>О себе
+            <textarea id="about" placeholder="Расскажите о себе..."></textarea>
+          </label>
+        </div>
+
+        <div class="form-section">
+          <h3>Образование</h3>
+          <label>Образование
+            <textarea id="education" placeholder="Ваше образование..."></textarea>
+          </label>
+          <label>Знание языков
+            <input type="text" id="language" placeholder="Например: Русский (родной), Английский (B1)">
+          </label>
+        </div>
+
+        <div class="form-section">
+          <h3>Дополнительно</h3>
+          <label>Гражданство <input type="text" id="citizenship"></label>
+          <label>Город проживания * <input type="text" id="city" required></label>
+        </div>
+
+        <button type="submit">Сохранить резюме</button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="resume.js"></script>
+</body>
+</html>

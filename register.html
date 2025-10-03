@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Регистрация / Вход</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="auth-container">
+      <h1 id="page-title">Регистрация</h1>
+      <p id="message" class="info"></p>
+      <div id="role-select">
+        <button data-role="seeker">Я Соискатель</button>
+        <button data-role="employer">Я Работодатель</button>
+      </div>
+      <form id="register-form" style="display:none;">
+        <label>Email <input type="email" id="email" required></label>
+        <label>Пароль <input type="password" id="password" required></label>
+        <div id="role-fields"></div>
+        <button type="submit" id="submit-btn">Зарегистрироваться</button>
+        <p>Уже есть аккаунт? <a href="#" id="switch-to-login">Войти</a></p>
+      </form>
+      <form id="login-form" style="display:none;">
+        <label>Email <input type="email" id="login-email" required></label>
+        <label>Пароль <input type="password" id="login-password" required></label>
+        <button type="submit">Войти</button>
+        <p>Нет аккаунта? <a href="#" id="switch-to-register">Зарегистрироваться</a></p>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="register.js"></script>
+</body>
+</html>

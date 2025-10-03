@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мои чаты - HireHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="favorites.html" id="favorites-btn" style="display:none;">⭐ Избранное</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="chats-container">
+      <div class="chats-header">
+        <h2>💬 Мои чаты</h2>
+        <div id="chats-role-info" class="role-info"></div>
+      </div>
+      
+      <div class="chats-controls">
+        <input type="text" id="chats-search" placeholder="🔍 Поиск по вакансиям или собеседникам..." class="search-input">
+        <div class="chats-filters">
+          <button id="filter-all" class="filter-btn active">Все чаты</button>
+          <button id="filter-unread" class="filter-btn">Непрочитанные</button>
+          <button id="filter-recent" class="filter-btn">Недавние</button>
+        </div>
+      </div>
+      
+      <div id="chats-loading" class="loading">Загрузка чатов...</div>
+      
+      <div id="chats-list" class="chats-list" style="display: none;">
+        <!-- Чаты будут здесь -->
+      </div>
+      
+      <div id="no-chats" class="no-chats" style="display: none;">
+        <div class="no-chats-content">
+          <h3>📭 У вас пока нет чатов</h3>
+          <p id="no-chats-message"></p>
+          <div id="no-chats-actions" class="no-chats-actions"></div>
+        </div>
+      </div>
+      
+      <div id="chat-detail" class="chat-detail" style="display: none;">
+        <div class="chat-header">
+          <button id="back-to-list" class="back-btn">← Назад к списку</button>
+          <div class="chat-partner-info">
+            <h3 id="chat-with-name"></h3>
+            <span id="chat-job-title" class="job-title"></span>
+          </div>
+          <div class="chat-actions">
+            <button id="view-vacancy-btn" class="view-vacancy-btn">👀 Посмотреть вакансию</button>
+          </div>
+        </div>
+        
+        <div id="messages-container" class="messages-container">
+          <!-- Сообщения будут здесь -->
+        </div>
+        
+        <div class="message-input-container">
+          <textarea id="message-input" placeholder="Введите сообщение..." rows="3"></textarea>
+          <button id="send-message-btn" class="send-btn">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="chat-manager.js"></script>
+  <script type="module" src="my-chats.js"></script>
+</body>
+</html>

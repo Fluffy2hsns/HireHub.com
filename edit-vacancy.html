@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Редактировать вакансию</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="auth-container">
+      <h1>Редактировать вакансию</h1>
+      <form id="edit-vacancy-form">
+        <label>Название вакансии * <input type="text" id="job-title" required></label>
+        <label>Компания * <input type="text" id="company-name" required></label>
+        <label>Зарплата (по желанию) <input type="number" id="job-salary" placeholder="Например, 150000"></label>
+        <label>Тип занятости *
+          <select id="job-type" required>
+            <option value="">Выберите тип</option>
+            <option value="full">Полная занятость</option>
+            <option value="part">Частичная занятость</option>
+            <option value="project">Проектная работа</option>
+            <option value="internship">Стажировка</option>
+            <option value="remote">Удаленная работа</option>
+          </select>
+        </label>
+        <label>Опыт работы *
+          <select id="job-experience" required>
+            <option value="">Выберите опыт</option>
+            <option value="no">Без опыта</option>
+            <option value="1-3">1-3 года</option>
+            <option value="3-6">3-6 лет</option>
+            <option value="6+">Более 6 лет</option>
+          </select>
+        </label>
+        <label>Город * <input type="text" id="job-city" required></label>
+        <label>Описание вакансии *
+          <textarea id="job-description" placeholder="Опишите обязанности, требования и условия работы..." required></textarea>
+        </label>
+        <label>Требования <textarea id="job-requirements" placeholder="Ключевые навыки и требования..."></textarea></label>
+        <label>Условия <textarea id="job-benefits" placeholder="Что предлагаете..."></textarea></label>
+        <label>Контактный email <input type="email" id="contact-email"></label>
+        <label>Статус вакансии *
+          <select id="job-status" required>
+            <option value="active">Активна</option>
+            <option value="paused">На паузе</option>
+            <option value="closed">Закрыта</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button type="submit">Сохранить изменения</button>
+          <button type="button" onclick="window.history.back()">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="edit-vacancy.js"></script>
+</body>
+</html>

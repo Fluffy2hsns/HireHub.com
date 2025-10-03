@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вакансия</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <h1>HireHub</h1>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="my-chats.html" id="chats-btn" style="display:none;">💬 Мои чаты</a>
+      <a href="notifications.html" id="notifications-btn" style="display:none;">Уведомления</a>
+      <a href="applications.html" id="applications-btn" style="display:none;">Мои данные</a>
+      <a href="register.html" id="login-btn">Войти</a>
+      <a href="#" id="logout-btn" style="display:none;">Выйти</a>
+      <a href="resume.html" id="resume-btn" style="display:none;">Создать резюме</a>
+      <a href="add-job.html" id="add-job-btn" style="display:none;">Добавить вакансию</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="vacancy-container">
+      <div id="vacancy-content">
+        </div>
+      <div id="vacancy-actions">
+        </div>
+    </div>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth-manager.js"></script>
+  <script type="module" src="vacancy.js"></script>
+  <script type="module" src="chat-manager.js"></script>
+</body>
+</html>
